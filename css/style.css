@@ -9,6 +9,8 @@
     border: 1px solid #E5E5E5;
     border-radius: 4px;
     background-color: #FFFFFF;
+    font-size: 12px;
+    text-align: center;
 }
 .sheet-tile.lamp-failed {
     background-color: #BDBDBD;
@@ -20,7 +22,7 @@
     background-color: #DCEDC8;
 }
 .sheet-tile.lamp-clear {
-    background-color: #BBDEFB;
+    background-color: #B3E5FC;
 }
 .sheet-tile.lamp-hard {
     background-color: #ffcdd2;
