@@ -35,7 +35,7 @@ class SheetTypesTable extends Table
         parent::initialize($config);
 
         $this->table('sheet_types');
-        $this->displayField('id');
+        $this->displayField('sheet_type_name');
         $this->primaryKey('id');
 
         $this->addBehavior('Timestamp');

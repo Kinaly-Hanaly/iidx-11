@@ -36,7 +36,7 @@ class VersionsTable extends Table
         parent::initialize($config);
 
         $this->table('versions');
-        $this->displayField('id');
+        $this->displayField('version_name');
         $this->primaryKey('id');
 
         $this->addBehavior('Timestamp');

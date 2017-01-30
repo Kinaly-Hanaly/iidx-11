@@ -35,7 +35,7 @@ class DifficultyRanksTable extends Table
         parent::initialize($config);
 
         $this->table('difficulty_ranks');
-        $this->displayField('id');
+        $this->displayField('rank_name');
         $this->primaryKey('id');
 
         $this->addBehavior('Timestamp');

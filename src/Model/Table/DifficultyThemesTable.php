@@ -35,7 +35,7 @@ class DifficultyThemesTable extends Table
         parent::initialize($config);
 
         $this->table('difficulty_themes');
-        $this->displayField('id');
+        $this->displayField('theme_name');
         $this->primaryKey('id');
 
         $this->addBehavior('Timestamp');

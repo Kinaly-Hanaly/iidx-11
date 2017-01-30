@@ -35,7 +35,7 @@ class DifficultyTypesTable extends Table
         parent::initialize($config);
 
         $this->table('difficulty_types');
-        $this->displayField('id');
+        $this->displayField('type_name');
         $this->primaryKey('id');
 
         $this->addBehavior('Timestamp');
