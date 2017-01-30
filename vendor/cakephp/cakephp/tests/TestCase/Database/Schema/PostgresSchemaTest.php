@@ -75,8 +75,6 @@ published BOOLEAN DEFAULT false,
 views SMALLINT DEFAULT 0,
 readingtime TIME,
 data JSONB,
-average_note DECIMAL(4,2),
-average_income NUMERIC(10,2),
 created TIMESTAMP,
 CONSTRAINT "content_idx" UNIQUE ("title", "body"),
 CONSTRAINT "author_idx" FOREIGN KEY ("author_id") REFERENCES "schema_authors" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
@@ -141,11 +139,11 @@ SQL;
             // Decimal
             [
                 'NUMERIC',
-                ['type' => 'decimal', 'length' => null, 'precision' => null]
+                ['type' => 'decimal', 'length' => null]
             ],
             [
                 'DECIMAL(10,2)',
-                ['type' => 'decimal', 'length' => 10, 'precision' => 2]
+                ['type' => 'decimal', 'length' => null]
             ],
             // String
             [
@@ -230,8 +228,6 @@ SQL;
             'default' => 'Default value',
             'comment' => 'Comment section',
             'char_length' => null,
-            'column_precision' => null,
-            'column_scale' => null,
             'collation_name' => 'ja_JP.utf8',
         ];
         $expected += [
@@ -240,11 +236,6 @@ SQL;
             'comment' => 'Comment section',
             'collate' => 'ja_JP.utf8',
         ];
-
-        if ($field['type'] === 'NUMERIC' || strpos($field['type'], 'DECIMAL') !== false) {
-            $field['column_precision'] = $expected['length'];
-            $field['column_scale'] = $expected['precision'];
-        }
 
         $driver = $this->getMockBuilder('Cake\Database\Driver\Postgres')->getMock();
         $dialect = new PostgresSchema($driver);
@@ -374,24 +365,6 @@ SQL;
                 'default' => null,
                 'length' => null,
                 'precision' => null,
-                'comment' => null,
-            ],
-            'average_note' => [
-                'type' => 'decimal',
-                'null' => true,
-                'default' => null,
-                'length' => 4,
-                'precision' => 2,
-                'unsigned' => null,
-                'comment' => null,
-            ],
-            'average_income' => [
-                'type' => 'decimal',
-                'null' => true,
-                'default' => null,
-                'length' => 10,
-                'precision' => 2,
-                'unsigned' => null,
                 'comment' => null,
             ],
             'created' => [

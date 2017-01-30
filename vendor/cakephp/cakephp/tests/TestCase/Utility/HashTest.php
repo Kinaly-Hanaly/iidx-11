@@ -470,19 +470,19 @@ class HashTest extends TestCase
     {
         $data = [];
         $result = Hash::maxDimensions($data);
-        $this->assertSame(0, $result);
+        $this->assertEquals(0, $result);
 
         $data = ['a', 'b'];
         $result = Hash::maxDimensions($data);
-        $this->assertSame(1, $result);
+        $this->assertEquals(1, $result);
 
         $data = ['1' => '1.1', '2', '3' => ['3.1' => '3.1.1']];
         $result = Hash::maxDimensions($data);
-        $this->assertSame(2, $result);
+        $this->assertEquals($result, 2);
 
         $data = ['1' => ['1.1' => '1.1.1'], '2', '3' => ['3.1' => ['3.1.1' => '3.1.1.1']]];
         $result = Hash::maxDimensions($data);
-        $this->assertSame(3, $result);
+        $this->assertEquals($result, 3);
 
         $data = [
             '1' => ['1.1' => '1.1.1'],
@@ -490,7 +490,7 @@ class HashTest extends TestCase
             '3' => ['3.1' => ['3.1.1' => '3.1.1.1']]
         ];
         $result = Hash::maxDimensions($data);
-        $this->assertSame(4, $result);
+        $this->assertEquals($result, 4);
 
         $data = [
            '1' => [
@@ -505,14 +505,7 @@ class HashTest extends TestCase
            '2' => ['2.1' => '2.1.1']
         ];
         $result = Hash::maxDimensions($data);
-        $this->assertSame(5, $result);
-
-        $data = [
-           '1' => false,
-           '2' => ['2.1' => '2.1.1']
-        ];
-        $result = Hash::maxDimensions($data);
-        $this->assertSame(2, $result);
+        $this->assertEquals($result, 5);
     }
 
     /**

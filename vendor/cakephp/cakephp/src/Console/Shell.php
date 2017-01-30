@@ -184,6 +184,7 @@ class Shell
             ['tasks'],
             ['associative' => ['tasks']]
         );
+        $this->_io->setLoggers(true);
 
         if (isset($this->modelClass)) {
             $this->loadModel();

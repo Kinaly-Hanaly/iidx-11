@@ -40,12 +40,7 @@ class RequestTransformer
     public static function toCake(PsrRequest $request)
     {
         $post = $request->getParsedBody();
-        $headers = [];
-        foreach ($request->getHeaders() as $k => $value) {
-            $name = sprintf('HTTP_%s', strtoupper(str_replace('-', '_', $k)));
-            $headers[$name] = implode(',', $value);
-        }
-        $server = $headers + $request->getServerParams();
+        $server = $request->getServerParams();
 
         $files = static::getFiles($request);
         if (!empty($files)) {

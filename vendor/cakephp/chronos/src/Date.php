@@ -51,7 +51,7 @@ class Date extends DateTimeImmutable implements ChronosInterface
      * subtraction/addition to have deterministic results.
      *
      * @param string|null $time Fixed or relative time
-     * @param \DateTimeZone|string|null $tz The timezone for the instance
+     * @param DateTimeZone|string|null $tz The timezone for the instance
      */
     public function __construct($time = 'now', $tz = null)
     {
@@ -59,18 +59,14 @@ class Date extends DateTimeImmutable implements ChronosInterface
         if (static::$testNow === null) {
             $time = $this->stripTime($time);
 
-            parent::__construct($time, $tz);
-
-            return;
+            return parent::__construct($time, $tz);
         }
 
         $relative = static::hasRelativeKeywords($time);
         if (!empty($time) && $time !== 'now' && !$relative) {
             $time = $this->stripTime($time);
 
-            parent::__construct($time, $tz);
-
-            return;
+            return parent::__construct($time, $tz);
         }
 
         $testInstance = static::getTestNow();

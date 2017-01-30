@@ -40,7 +40,7 @@ class SapiStreamEmitter implements EmitterInterface
 
         $range = $this->parseContentRange($response->getHeaderLine('Content-Range'));
 
-        if (is_array($range) && $range[0] === 'bytes') {
+        if (is_array($range)) {
             $this->emitBodyRange($range, $response, $maxBufferLength);
             return;
         }

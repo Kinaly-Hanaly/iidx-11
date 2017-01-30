@@ -632,9 +632,7 @@ class Filesystem
 
         if (!is_dir($dir)) {
             $this->mkdir($dir);
-        }
-
-        if (!is_writable($dir)) {
+        } elseif (!is_writable($dir)) {
             throw new IOException(sprintf('Unable to write to the "%s" directory.', $dir), 0, null, $dir);
         }
 

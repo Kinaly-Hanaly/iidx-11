@@ -11,10 +11,6 @@ API services, or contact forms.
 
 
 ```php
-use Cake\Form\Form;
-use Cake\Form\Schema;
-use Cake\Validation\Validator;
-
 class ContactForm extends Form
 {
 

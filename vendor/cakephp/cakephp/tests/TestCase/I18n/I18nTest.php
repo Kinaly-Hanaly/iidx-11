@@ -68,7 +68,7 @@ class I18nTest extends TestCase
     public function testDefaultTranslator()
     {
         $translator = I18n::translator();
-        $this->assertInstanceOf('Aura\Intl\TranslatorInterface', $translator);
+        $this->assertInstanceOf('Aura\Intl\Translator', $translator);
         $this->assertEquals('%d is 1 (po translated)', $translator->translate('%d = 1'));
     }
 
@@ -245,17 +245,6 @@ class I18nTest extends TestCase
     }
 
     /**
-     * Tests the __() function on a plural key
-     *
-     * @return void
-     */
-    public function testBasicTranslateFunctionPluralData()
-    {
-        I18n::defaultFormatter('sprintf');
-        $this->assertEquals('%d is 1 (po translated)', __('%d = 0 or > 1'));
-    }
-
-    /**
      * Tests the __n() function
      *
      * @return void
@@ -395,30 +384,6 @@ class I18nTest extends TestCase
         });
 
         $this->assertEquals('', __x('character', 'letter'));
-    }
-
-    /**
-     * Tests the __x() function with an invalid context
-     *
-     * @return void
-     */
-    public function testBasicContextFunctionInvalidContext()
-    {
-        I18n::translator('default', 'en_US', function () {
-            $package = new Package('default');
-            $package->setMessages([
-                'letter' => [
-                    '_context' => [
-                        'noun' => 'a paper letter',
-                    ]
-                ]
-            ]);
-
-            return $package;
-        });
-
-        $this->assertEquals('letter', __x('garbage', 'letter'));
-        $this->assertEquals('a paper letter', __('letter'));
     }
 
     /**
