@@ -39,4 +39,8 @@ class Sheet extends Entity
         '*' => true,
         'id' => false
     ];
+
+    protected function _getDisplayName() {
+        return $this->tune->title.' ['.$this->sheet_type->sheet_type_code.']';
+    }
 }

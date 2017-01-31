@@ -38,7 +38,7 @@ class SheetsTable extends Table
         parent::initialize($config);
 
         $this->table('sheets');
-        $this->displayField('id');
+        $this->displayField('display_name');
         $this->primaryKey('id');
 
         $this->addBehavior('Timestamp');
