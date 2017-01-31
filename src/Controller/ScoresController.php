@@ -19,7 +19,7 @@ class ScoresController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Users', 'Sheets', 'Versions', 'Lamps']
+            'contain' => ['Users', 'Sheets', 'Sheets.Tunes', 'Sheets.SheetTypes', 'Versions', 'Lamps']
         ];
         $scores = $this->paginate($this->Scores);
 
@@ -37,7 +37,7 @@ class ScoresController extends AppController
     public function view($id = null)
     {
         $score = $this->Scores->get($id, [
-            'contain' => ['Users', 'Sheets', 'Versions', 'Lamps']
+            'contain' => ['Users', 'Sheets', 'Sheets.Tunes', 'Sheets.SheetTypes', 'Versions', 'Lamps']
         ]);
 
         $this->set('score', $score);
@@ -62,7 +62,7 @@ class ScoresController extends AppController
             $this->Flash->error(__('The score could not be saved. Please, try again.'));
         }
         $users = $this->Scores->Users->find('list', ['limit' => 200]);
-        $sheets = $this->Scores->Sheets->find('list', ['limit' => 200]);
+        $sheets = $this->Scores->Sheets->find('list', ['limit' => 200, 'contain' => ['Tunes', 'SheetTypes']]);
         $versions = $this->Scores->Versions->find('list', ['limit' => 200]);
         $lamps = $this->Scores->Lamps->find('list', ['limit' => 200]);
         $this->set(compact('score', 'users', 'sheets', 'versions', 'lamps'));
@@ -91,7 +91,7 @@ class ScoresController extends AppController
             $this->Flash->error(__('The score could not be saved. Please, try again.'));
         }
         $users = $this->Scores->Users->find('list', ['limit' => 200]);
-        $sheets = $this->Scores->Sheets->find('list', ['limit' => 200]);
+        $sheets = $this->Scores->Sheets->find('list', ['limit' => 200, 'contain' => ['Tunes', 'SheetTypes']]);
         $versions = $this->Scores->Versions->find('list', ['limit' => 200]);
         $lamps = $this->Scores->Lamps->find('list', ['limit' => 200]);
         $this->set(compact('score', 'users', 'sheets', 'versions', 'lamps'));
