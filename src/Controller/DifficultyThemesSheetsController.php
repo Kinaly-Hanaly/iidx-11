@@ -19,7 +19,7 @@ class DifficultyThemesSheetsController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Sheets', 'DifficultyThemes', 'DifficultyTypes', 'DifficultyRanks']
+            'contain' => ['Sheets', 'Sheets.Tunes', 'Sheets.SheetTypes', 'DifficultyThemes', 'DifficultyTypes', 'DifficultyRanks']
         ];
         $difficultyThemesSheets = $this->paginate($this->DifficultyThemesSheets);
 
@@ -37,7 +37,7 @@ class DifficultyThemesSheetsController extends AppController
     public function view($id = null)
     {
         $difficultyThemesSheet = $this->DifficultyThemesSheets->get($id, [
-            'contain' => ['Sheets', 'DifficultyThemes', 'DifficultyTypes', 'DifficultyRanks']
+            'contain' => ['Sheets', 'Sheets.Tunes', 'Sheets.SheetTypes', 'DifficultyThemes', 'DifficultyTypes', 'DifficultyRanks']
         ]);
 
         $this->set('difficultyThemesSheet', $difficultyThemesSheet);
@@ -61,7 +61,7 @@ class DifficultyThemesSheetsController extends AppController
             }
             $this->Flash->error(__('The difficulty themes sheet could not be saved. Please, try again.'));
         }
-        $sheets = $this->DifficultyThemesSheets->Sheets->find('list', ['limit' => 200]);
+        $sheets = $this->DifficultyThemesSheets->Sheets->find('list', ['limit' => 200, 'contain' => ['Tunes', 'SheetTypes']]);
         $difficultyThemes = $this->DifficultyThemesSheets->DifficultyThemes->find('list', ['limit' => 200]);
         $difficultyTypes = $this->DifficultyThemesSheets->DifficultyTypes->find('list', ['limit' => 200]);
         $difficultyRanks = $this->DifficultyThemesSheets->DifficultyRanks->find('list', ['limit' => 200]);
@@ -90,7 +90,7 @@ class DifficultyThemesSheetsController extends AppController
             }
             $this->Flash->error(__('The difficulty themes sheet could not be saved. Please, try again.'));
         }
-        $sheets = $this->DifficultyThemesSheets->Sheets->find('list', ['limit' => 200]);
+        $sheets = $this->DifficultyThemesSheets->Sheets->find('list', ['limit' => 200, 'contain' => ['Tunes', 'SheetTypes']]);
         $difficultyThemes = $this->DifficultyThemesSheets->DifficultyThemes->find('list', ['limit' => 200]);
         $difficultyTypes = $this->DifficultyThemesSheets->DifficultyTypes->find('list', ['limit' => 200]);
         $difficultyRanks = $this->DifficultyThemesSheets->DifficultyRanks->find('list', ['limit' => 200]);
