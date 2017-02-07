@@ -15,20 +15,8 @@
     </ul>
 </nav>
 <div class="users view large-9 medium-8 columns content">
-    <h3><?= h($user->username) ?></h3>
+    <h3><?= h($user->djname) ?> (<?= h($user->iidxid) ?>)</h3>
     <table class="vertical-table">
-        <tr>
-            <th scope="row"><?= __('Username') ?></th>
-            <td><?= h($user->username) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Email') ?></th>
-            <td><?= h($user->email) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Password') ?></th>
-            <td><?= h($user->password) ?></td>
-        </tr>
         <tr>
             <th scope="row"><?= __('Djname') ?></th>
             <td><?= h($user->djname) ?></td>
@@ -36,10 +24,6 @@
         <tr>
             <th scope="row"><?= __('Iidxid') ?></th>
             <td><?= h($user->iidxid) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($user->id) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Created') ?></th>
@@ -50,10 +34,6 @@
             <td><?= h($user->modified) ?></td>
         </tr>
     </table>
-    <div class="row">
-        <h4><?= __('Role') ?></h4>
-        <?= $this->Text->autoParagraph(h($user->role)); ?>
-    </div>
     <div class="related">
         <h4><?= __('Related Scores') ?></h4>
         <?php if (!empty($user->scores)): ?>
