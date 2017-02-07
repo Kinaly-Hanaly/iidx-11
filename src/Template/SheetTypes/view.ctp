@@ -15,7 +15,7 @@
     </ul>
 </nav>
 <div class="sheetTypes view large-9 medium-8 columns content">
-    <h3><?= h($sheetType->id) ?></h3>
+    <h3><?= h($sheetType->sheet_type_name) ?></h3>
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Sheet Type Code') ?></th>

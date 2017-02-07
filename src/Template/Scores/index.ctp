@@ -38,10 +38,10 @@
             <?php foreach ($scores as $score): ?>
             <tr>
                 <td><?= $this->Number->format($score->id) ?></td>
-                <td><?= $score->has('user') ? $this->Html->link($score->user->id, ['controller' => 'Users', 'action' => 'view', $score->user->id]) : '' ?></td>
-                <td><?= $score->has('sheet') ? $this->Html->link($score->sheet->id, ['controller' => 'Sheets', 'action' => 'view', $score->sheet->id]) : '' ?></td>
-                <td><?= $score->has('version') ? $this->Html->link($score->version->id, ['controller' => 'Versions', 'action' => 'view', $score->version->id]) : '' ?></td>
-                <td><?= $score->has('lamp') ? $this->Html->link($score->lamp->id, ['controller' => 'Lamps', 'action' => 'view', $score->lamp->id]) : '' ?></td>
+                <td><?= $score->has('user') ? $this->Html->link($score->user->username, ['controller' => 'Users', 'action' => 'view', $score->user->id]) : '' ?></td>
+                <td><?= $score->has('sheet') ? $this->Html->link($score->sheet->display_name, ['controller' => 'Sheets', 'action' => 'view', $score->sheet->id]) : '' ?></td>
+                <td><?= $score->has('version') ? $this->Html->link($score->version->version_name, ['controller' => 'Versions', 'action' => 'view', $score->version->id]) : '' ?></td>
+                <td><?= $score->has('lamp') ? $this->Html->link($score->lamp->lamp_name, ['controller' => 'Lamps', 'action' => 'view', $score->lamp->id]) : '' ?></td>
                 <td><?= $this->Number->format($score->score) ?></td>
                 <td><?= $this->Number->format($score->bp) ?></td>
                 <td><?= h($score->created) ?></td>

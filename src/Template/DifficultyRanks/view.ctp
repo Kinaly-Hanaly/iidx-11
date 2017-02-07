@@ -15,7 +15,7 @@
     </ul>
 </nav>
 <div class="difficultyRanks view large-9 medium-8 columns content">
-    <h3><?= h($difficultyRank->id) ?></h3>
+    <h3><?= h($difficultyRank->rank_name) ?></h3>
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Rank Code') ?></th>

@@ -15,7 +15,7 @@
     </ul>
 </nav>
 <div class="lamps view large-9 medium-8 columns content">
-    <h3><?= h($lamp->id) ?></h3>
+    <h3><?= h($lamp->lamp_name) ?></h3>
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Lamp Code') ?></th>

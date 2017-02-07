@@ -17,7 +17,7 @@
     </ul>
 </nav>
 <div class="versions view large-9 medium-8 columns content">
-    <h3><?= h($version->id) ?></h3>
+    <h3><?= h($version->version_name) ?></h3>
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Version Name') ?></th>

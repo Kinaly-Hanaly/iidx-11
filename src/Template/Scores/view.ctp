@@ -25,19 +25,19 @@
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('User') ?></th>
-            <td><?= $score->has('user') ? $this->Html->link($score->user->id, ['controller' => 'Users', 'action' => 'view', $score->user->id]) : '' ?></td>
+            <td><?= $score->has('user') ? $this->Html->link($score->user->username, ['controller' => 'Users', 'action' => 'view', $score->user->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Sheet') ?></th>
-            <td><?= $score->has('sheet') ? $this->Html->link($score->sheet->id, ['controller' => 'Sheets', 'action' => 'view', $score->sheet->id]) : '' ?></td>
+            <td><?= $score->has('sheet') ? $this->Html->link($score->sheet->display_name, ['controller' => 'Sheets', 'action' => 'view', $score->sheet->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Version') ?></th>
-            <td><?= $score->has('version') ? $this->Html->link($score->version->id, ['controller' => 'Versions', 'action' => 'view', $score->version->id]) : '' ?></td>
+            <td><?= $score->has('version') ? $this->Html->link($score->version->version_name, ['controller' => 'Versions', 'action' => 'view', $score->version->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Lamp') ?></th>
-            <td><?= $score->has('lamp') ? $this->Html->link($score->lamp->id, ['controller' => 'Lamps', 'action' => 'view', $score->lamp->id]) : '' ?></td>
+            <td><?= $score->has('lamp') ? $this->Html->link($score->lamp->lamp_name, ['controller' => 'Lamps', 'action' => 'view', $score->lamp->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id') ?></th>

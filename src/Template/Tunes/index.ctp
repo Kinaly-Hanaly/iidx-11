@@ -33,7 +33,7 @@
                 <td><?= $this->Number->format($tune->id) ?></td>
                 <td><?= h($tune->tune_code) ?></td>
                 <td><?= h($tune->title) ?></td>
-                <td><?= $tune->has('version') ? $this->Html->link($tune->version->id, ['controller' => 'Versions', 'action' => 'view', $tune->version->id]) : '' ?></td>
+                <td><?= $tune->has('version') ? $this->Html->link($tune->version->version_name, ['controller' => 'Versions', 'action' => 'view', $tune->version->id]) : '' ?></td>
                 <td><?= h($tune->created) ?></td>
                 <td><?= h($tune->modified) ?></td>
                 <td class="actions">

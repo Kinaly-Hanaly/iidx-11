@@ -21,7 +21,7 @@
     </ul>
 </nav>
 <div class="sheets view large-9 medium-8 columns content">
-    <h3><?= h($sheet->id) ?></h3>
+    <h3><?= h($sheet->display_name) ?></h3>
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Sheet Code') ?></th>
@@ -33,7 +33,7 @@
         </tr>
         <tr>
             <th scope="row"><?= __('Sheet Type') ?></th>
-            <td><?= $sheet->has('sheet_type') ? $this->Html->link($sheet->sheet_type->id, ['controller' => 'SheetTypes', 'action' => 'view', $sheet->sheet_type->id]) : '' ?></td>
+            <td><?= $sheet->has('sheet_type') ? $this->Html->link($sheet->sheet_type->sheet_type_name, ['controller' => 'SheetTypes', 'action' => 'view', $sheet->sheet_type->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Textage Url 1p') ?></th>

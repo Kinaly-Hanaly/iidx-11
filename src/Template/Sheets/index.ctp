@@ -41,7 +41,7 @@
                 <td><?= $this->Number->format($sheet->id) ?></td>
                 <td><?= h($sheet->sheet_code) ?></td>
                 <td><?= $sheet->has('tune') ? $this->Html->link($sheet->tune->title, ['controller' => 'Tunes', 'action' => 'view', $sheet->tune->id]) : '' ?></td>
-                <td><?= $sheet->has('sheet_type') ? $this->Html->link($sheet->sheet_type->id, ['controller' => 'SheetTypes', 'action' => 'view', $sheet->sheet_type->id]) : '' ?></td>
+                <td><?= $sheet->has('sheet_type') ? $this->Html->link($sheet->sheet_type->sheet_type_name, ['controller' => 'SheetTypes', 'action' => 'view', $sheet->sheet_type->id]) : '' ?></td>
                 <td><?= $this->Number->format($sheet->notes) ?></td>
                 <td><?= h($sheet->textage_url_1p) ?></td>
                 <td><?= h($sheet->textage_url_2p) ?></td>

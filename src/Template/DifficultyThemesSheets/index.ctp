@@ -34,10 +34,10 @@
         <tbody>
             <?php foreach ($difficultyThemesSheets as $difficultyThemesSheet): ?>
             <tr>
-                <td><?= $difficultyThemesSheet->has('sheet') ? $this->Html->link($difficultyThemesSheet->sheet->id, ['controller' => 'Sheets', 'action' => 'view', $difficultyThemesSheet->sheet->id]) : '' ?></td>
-                <td><?= $difficultyThemesSheet->has('difficulty_theme') ? $this->Html->link($difficultyThemesSheet->difficulty_theme->id, ['controller' => 'DifficultyThemes', 'action' => 'view', $difficultyThemesSheet->difficulty_theme->id]) : '' ?></td>
-                <td><?= $difficultyThemesSheet->has('difficulty_type') ? $this->Html->link($difficultyThemesSheet->difficulty_type->id, ['controller' => 'DifficultyTypes', 'action' => 'view', $difficultyThemesSheet->difficulty_type->id]) : '' ?></td>
-                <td><?= $difficultyThemesSheet->has('difficulty_rank') ? $this->Html->link($difficultyThemesSheet->difficulty_rank->id, ['controller' => 'DifficultyRanks', 'action' => 'view', $difficultyThemesSheet->difficulty_rank->id]) : '' ?></td>
+                <td><?= $difficultyThemesSheet->has('sheet') ? $this->Html->link($difficultyThemesSheet->sheet->display_name, ['controller' => 'Sheets', 'action' => 'view', $difficultyThemesSheet->sheet->id]) : '' ?></td>
+                <td><?= $difficultyThemesSheet->has('difficulty_theme') ? $this->Html->link($difficultyThemesSheet->difficulty_theme->theme_name, ['controller' => 'DifficultyThemes', 'action' => 'view', $difficultyThemesSheet->difficulty_theme->id]) : '' ?></td>
+                <td><?= $difficultyThemesSheet->has('difficulty_type') ? $this->Html->link($difficultyThemesSheet->difficulty_type->type_name, ['controller' => 'DifficultyTypes', 'action' => 'view', $difficultyThemesSheet->difficulty_type->id]) : '' ?></td>
+                <td><?= $difficultyThemesSheet->has('difficulty_rank') ? $this->Html->link($difficultyThemesSheet->difficulty_rank->rank_name, ['controller' => 'DifficultyRanks', 'action' => 'view', $difficultyThemesSheet->difficulty_rank->id]) : '' ?></td>
                 <td><?= h($difficultyThemesSheet->created) ?></td>
                 <td><?= h($difficultyThemesSheet->modified) ?></td>
                 <td class="actions">

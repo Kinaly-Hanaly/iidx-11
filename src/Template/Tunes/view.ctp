@@ -29,7 +29,7 @@
         </tr>
         <tr>
             <th scope="row"><?= __('Version') ?></th>
-            <td><?= $tune->has('version') ? $this->Html->link($tune->version->id, ['controller' => 'Versions', 'action' => 'view', $tune->version->id]) : '' ?></td>
+            <td><?= $tune->has('version') ? $this->Html->link($tune->version->version_name, ['controller' => 'Versions', 'action' => 'view', $tune->version->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id') ?></th>

@@ -1,7 +1,6 @@
 <?php
 namespace App\Model\Entity;
 
-use Cake\Auth\DefaultPasswordHasher;
 use Cake\ORM\Entity;
 
 /**
@@ -11,6 +10,7 @@ use Cake\ORM\Entity;
  * @property string $username
  * @property string $email
  * @property string $password
+ * @property string $role
  * @property string $djname
  * @property string $iidxid
  * @property \Cake\I18n\Time $created
@@ -43,15 +43,4 @@ class User extends Entity
     protected $_hidden = [
         'password'
     ];
-
-    /**
-     * 2017/01/30 kinaly
-     * passwordのセッターに、ハッシュ化処理を噛ませる
-     *
-     */
-    protected function _setPassword($value)
-    {
-        $hasher = new DefaultPasswordHasher();
-        return $hasher->hash($value);
-    }
 }
