@@ -14,7 +14,25 @@ class UsersController extends AppController
     public function initialize()
     {
         parent::initialize();
-        $this->Auth->allow(['logout', 'add']);
+        // A Guest can execute index/view/add/logout.
+        $this->Auth->allow(['index', 'view', 'add', 'logout']);
+    }
+
+    public function isAuthorized($user = null)
+    {
+        $action = $this->request->params['action'];
+
+        // A User can edit myself.
+        if ($action == 'edit')
+        {
+            $targetId = $this->request->params['pass'][0];
+            if ($targetId == $user['id']) {
+                return true;
+            }
+        }
+
+        // Only Admin can delete users.
+        return parent::isAuthorized($user);
     }
 
     /**
