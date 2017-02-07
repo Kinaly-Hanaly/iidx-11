@@ -11,6 +11,34 @@ use App\Controller\AppController;
 class ScoresController extends AppController
 {
 
+    public function initialize()
+    {
+        parent::initialize();
+        // A Guest can execute index/view.
+        $this->Auth->allow(['index', 'view']);
+    }
+
+    public function isAuthorized($user = null)
+    {
+        $action = $this->request->params['action'];
+
+        // A User can add.
+        if($action == 'add')
+        {
+            return true;
+        }
+        // A User can edit/delete his.
+        if (in_array($action, ['edit', 'delete']))
+        {
+            $id = $this->request->params['pass'][0];
+            $score = $this->Scores->get($id);
+            if ($score->user_id == $user['id']) {
+                return true;
+            }
+        }
+        return parent::isAuthorized($user);
+    }
+
     /**
      * Index method
      *
