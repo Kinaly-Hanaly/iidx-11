@@ -43,7 +43,11 @@ class DifficultyThemesTable extends Table
         $this->belongsToMany('Sheets', [
             'foreignKey' => 'difficulty_theme_id',
             'targetForeignKey' => 'sheet_id',
-            'joinTable' => 'difficulty_themes_sheets'
+            'through' => 'DifficultyThemesSheets'
+        ]);
+
+        $this->hasMany('DifficultyThemesSheets', [
+            'foreignKey' => 'difficulty_theme_id'
         ]);
     }
 
@@ -84,4 +88,32 @@ class DifficultyThemesTable extends Table
 
         return $rules;
     }
+
+    public function findWithUserScore(Query $query, array $options)
+    {
+        $user_id = $options['user_id'];
+
+        $difficultyTheme = $this->find()
+            ->where(['id' => $options['difficultyTheme_id']])
+            ->contain(['DifficultyThemesSheets' => function ($q) use ($user_id) {
+                $q  ->contain(['DifficultyTypes'])
+                    ->contain(['DifficultyRanks'])
+                    ->contain(['Sheets.Tunes'])
+                    ->contain(['Sheets.SheetTypes'])
+                    ->contain(['Sheets.Scores' => function ($q) use ($user_id) {
+                       $q  ->contain('Lamps')
+                           ->where(['Scores.user_id' => $user_id])
+                           ->order(['Scores.version_id' => 'DESC']);
+                       return $q;
+                    }])
+                    ->order(['DifficultyRanks.rank_score' => 'DESC',
+                            'DifficultyTypes.id' => 'ASC',
+                            'Tunes.title' => 'ASC',
+                            'SheetTypes.id' => 'ASC' ]);
+                return $q;
+            }])
+            ->first();
+        return $difficultyTheme;
+    }
+
 }
