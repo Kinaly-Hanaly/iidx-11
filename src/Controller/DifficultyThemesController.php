@@ -108,4 +108,21 @@ class DifficultyThemesController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    public function viewWithUserScore()
+    {
+
+        $user_id = $this->request->params['pass'][0];
+        debug($user_id);
+        $theme_id = $this->request->params['pass'][1];
+        debug($theme_id);
+
+        $difficultyTheme = $this->DifficultyThemes->find('WithUserScore', [
+            'user_id' => $user_id,
+            'difficultyTheme_id' => $theme_id
+        ]);
+
+        $this->set('difficultyTheme', $difficultyTheme);
+        $this->set('_serialize', ['difficultyTheme']);
+    }
 }
