@@ -15,9 +15,11 @@
         <?php foreach ($difficultyTheme->difficulty_themes_sheets as $difficulty => $sheets) : ?>
 
         <h2><?= h($difficulty) ?></h2>
-        <ul>
+        <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
             <?php foreach ($sheets as $sheet) : ?>
-                <li><?= h($sheet->tune->title) ?> [<?= h($sheet->sheet_type->sheet_type_code) ?>]</li>
+                <li><div class="uk-panel uk-panel-box sheet-tile">
+                    <?= h($sheet->tune->title) ?> [<?= h($sheet->sheet_type->sheet_type_code) ?>]
+                </div></li>
             <?php endforeach; ?>
         </ul>
         <?php endforeach; ?>
