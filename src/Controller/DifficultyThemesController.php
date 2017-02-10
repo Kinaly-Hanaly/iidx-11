@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * DifficultyThemes Controller
@@ -120,6 +121,9 @@ class DifficultyThemesController extends AppController
             'difficultyTheme_id' => $theme_id
         ]);
 
+        $usersTable = TableRegistry::get('Users');
+        $user = $usersTable->get($user_id);
+
         // 難易度ごとにグループ分けする
         $difficulties_sheets = array();
         $tmp_theme_sheet = array();
@@ -142,6 +146,7 @@ class DifficultyThemesController extends AppController
         $difficultyTheme->difficulty_themes_sheets = $difficulties_sheets;
 
         $this->set('difficultyTheme', $difficultyTheme);
+        $this->set('user', $user);
         $this->set('_serialize', ['difficultyTheme']);
     }
 }

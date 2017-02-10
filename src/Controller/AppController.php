@@ -57,6 +57,7 @@ class AppController extends Controller
         // PagesController が動作し続けるように
         // display アクションを許可
         $this->Auth->allow(['display']);
+        $this->set('login_user', $this->Auth->user());
 
         /*
          * Enable the following components for recommended CakePHP security settings.

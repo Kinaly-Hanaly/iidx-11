@@ -1,399 +1,386 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-    <title>tmp</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/uikit.min.css" />
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <script src="js/uikit.min.js"></script>
-</head>
-<body>
-    <div id="wrap">
-        <h1><?= h($difficultyTheme->theme_name) ?></h1>
-        <?php foreach ($difficultyTheme->difficulty_themes_sheets as $difficulty => $sheets) : ?>
+<div id="wrap">
+    <h1><?= h($difficultyTheme->theme_name) ?> - <?= h($user->djname) ?>(<?= h($user->iidxid) ?>)</h1>
+    <p>Login as <?= h($login_user['djname']) ?></p>
+    <?php foreach ($difficultyTheme->difficulty_themes_sheets as $difficulty => $sheets) : ?>
 
-        <h2><?= h($difficulty) ?></h2>
-        <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
-            <?php foreach ($sheets as $sheet) : ?>
-                <li><div class="uk-panel uk-panel-box sheet-tile">
-                    <?= h($sheet->tune->title) ?> [<?= h($sheet->sheet_type->sheet_type_code) ?>]
-                </div></li>
-            <?php endforeach; ?>
-        </ul>
+    <h2><?= h($difficulty) ?></h2>
+    <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
+        <?php foreach ($sheets as $sheet) : ?>
+            <li><div class="uk-panel uk-panel-box sheet-tile">
+                <?= h($sheet->tune->title) ?> [<?= h($sheet->sheet_type->sheet_type_code) ?>]
+            </div></li>
         <?php endforeach; ?>
-        <hr><hr><hr><hr><hr><hr>
-        <h2>地力S+</h2>
-        <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Critical Crystal(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">four pieces of heaven(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">SCHWARZSCHILD FIELD(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">V2(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">卑弥呼(H)</div></li>
-        </ul>
+    </ul>
+    <?php endforeach; ?>
+    <hr><hr><hr><hr><hr><hr>
+    <h2>地力S+</h2>
+    <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Critical Crystal(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">four pieces of heaven(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">SCHWARZSCHILD FIELD(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">V2(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">卑弥呼(H)</div></li>
+    </ul>
 
-        <h2>個人差S+</h2>
-        <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
-            <li><div class="uk-panel uk-panel-box sheet-tile">Golden Palms†(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Just a Little Smile(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">SABER WING(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">SAMURAI-Scramble(A)</div></li>
-        </ul>
+    <h2>個人差S+</h2>
+    <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
+        <li><div class="uk-panel uk-panel-box sheet-tile">Golden Palms†(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Just a Little Smile(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">SABER WING(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">SAMURAI-Scramble(A)</div></li>
+    </ul>
 
-        <h2>地力S</h2>
-        <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">1st Samurai(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">532nm(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">ALBA -黎明-(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">B4U(BEMANI FOR YOU MIX)(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Battle Train -IIDX Edition-(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Chrono Diver -PENDULUMs-(H)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">examination leave(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">In The Blackest Den(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">New Decade IIDX Edition(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">On the FM(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">perditus†paradisus(H)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-clear">Pollinosis(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Sarutobi Champion is 拙者(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Sense 2007(H)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">STEEL NEEDLE(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">TRANOID(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">ドッキン☆サマーあばんちゅーる(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">御千手メディテーション(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-clear">旅人リラン(A)</div></li>
-        </ul>
+    <h2>地力S</h2>
+    <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">1st Samurai(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">532nm(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">ALBA -黎明-(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">B4U(BEMANI FOR YOU MIX)(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Battle Train -IIDX Edition-(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Chrono Diver -PENDULUMs-(H)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">examination leave(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">In The Blackest Den(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">New Decade IIDX Edition(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">On the FM(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">perditus†paradisus(H)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-clear">Pollinosis(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Sarutobi Champion is 拙者(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Sense 2007(H)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">STEEL NEEDLE(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">TRANOID(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">ドッキン☆サマーあばんちゅーる(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">御千手メディテーション(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-clear">旅人リラン(A)</div></li>
+    </ul>
 
-        <h2>個人差S</h2>
-        <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Beastie Starter(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Bounce Bounce Bounce(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-clear">BRAINSTORM(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">D(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">DISAPPEAR feat.koyomin(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-clear">Funny Shuffle(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Illegal Function Call(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile">Kailua (HCN Ver.)(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Kailua(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">m1dy Deluxe(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">MENTAL MELTDOWN(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Routing(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Spica(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">カジノファイヤーことみちゃん(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">もっと!モット!ときめき feat.松下(A)</div></li>
-        </ul>
+    <h2>個人差S</h2>
+    <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Beastie Starter(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Bounce Bounce Bounce(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-clear">BRAINSTORM(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">D(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">DISAPPEAR feat.koyomin(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-clear">Funny Shuffle(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Illegal Function Call(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile">Kailua (HCN Ver.)(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Kailua(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">m1dy Deluxe(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">MENTAL MELTDOWN(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Routing(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Spica(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">カジノファイヤーことみちゃん(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">もっと!モット!ときめき feat.松下(A)</div></li>
+    </ul>
 
-        <h2>地力A+</h2>
-        <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">24th Century BOY(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Aegis(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Angelic Jelly(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Beyond The Earth(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">BLOCKS(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">bloomin' feeling(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Castle on the Moon(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">FLOWER(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">I will be back -オレは帰ってきた-(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Let The Track Flow(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Modular Technology(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Overload Frontier(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-clear">S!ck(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">stoic(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">THE BLACK KNIGHT(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">THE FALLEN(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">tripping contact(teranoid&MC Natsack Remix)(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">VALLIS-NERIA(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">VEGA(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">You'll say "Now!"(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">デッドボヲルdeホームラン</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">量子の海のリントヴルム(A)</div></li>
-        </ul>
+    <h2>地力A+</h2>
+    <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">24th Century BOY(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Aegis(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Angelic Jelly(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Beyond The Earth(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">BLOCKS(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">bloomin' feeling(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Castle on the Moon(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">FLOWER(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">I will be back -オレは帰ってきた-(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Let The Track Flow(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Modular Technology(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Overload Frontier(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-clear">S!ck(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">stoic(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">THE BLACK KNIGHT(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">THE FALLEN(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">tripping contact(teranoid&MC Natsack Remix)(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">VALLIS-NERIA(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">VEGA(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">You'll say "Now!"(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">デッドボヲルdeホームラン</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">量子の海のリントヴルム(A)</div></li>
+    </ul>
 
-        <h2>個人差A+</h2>
-        <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Acid Pumper(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile">Almagest (HCN Ver.)(H)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Almagest(H)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Do it!! Do it!!(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Ganymede(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">VOX UP(H)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">XINOBIKILL(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">ZETA～素数の世界と超越者～(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">とろぴかる倶楽部(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">蛇神(A)</div></li>
-        </ul>
+    <h2>個人差A+</h2>
+    <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Acid Pumper(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile">Almagest (HCN Ver.)(H)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Almagest(H)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Do it!! Do it!!(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Ganymede(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">VOX UP(H)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">XINOBIKILL(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">ZETA～素数の世界と超越者～(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">とろぴかる倶楽部(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">蛇神(A)</div></li>
+    </ul>
 
-        <h2>地力A</h2>
-        <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">×↑×↓(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">CaptivAte2～覚醒～(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">chaos eater -IIDX edition-(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Cookie Bouquets(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Dark Fall(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">DESIRE(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">diagram(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">DROP(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">G2(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">GALGALIM(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">GENOCIDE(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Giudecca(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">GOBBLE(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">HELL SCAPER -Last Escape Remix-(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Hello Happiness(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Holic(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">I'm so Happy(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">in the Sky(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Inner Spirit(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Kung-fu Empire(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">LA FESTA LA VITA!!(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Light and Cyber･･･(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">MAGIC & LOVE(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">No.13(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Outbreak(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">rumrum triplets(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Saturn(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Scars of FAUNA(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Secrets(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Session 1 -Genesis-(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">smile(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">STELLAR WIND(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">THE DEEP STRIKER(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">The Dirty of Loudness(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Time to Air(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">TITANS RETURN(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Unicorn tail(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Violet Rose(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">waxing and wanding(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Welcome(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">ユミル(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">創世ノート(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">朝焼けから始まるボクらの小さな旅(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">追想快晴テーマパーク(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">忍恋花(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">夕焼け ～Fading Day～(A)</div></li>
-        </ul>
+    <h2>地力A</h2>
+    <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">×↑×↓(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">CaptivAte2～覚醒～(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">chaos eater -IIDX edition-(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Cookie Bouquets(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Dark Fall(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">DESIRE(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">diagram(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">DROP(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">G2(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">GALGALIM(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">GENOCIDE(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Giudecca(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">GOBBLE(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">HELL SCAPER -Last Escape Remix-(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Hello Happiness(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Holic(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">I'm so Happy(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">in the Sky(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Inner Spirit(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Kung-fu Empire(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">LA FESTA LA VITA!!(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Light and Cyber･･･(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">MAGIC & LOVE(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">No.13(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Outbreak(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">rumrum triplets(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Saturn(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Scars of FAUNA(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Secrets(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Session 1 -Genesis-(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">smile(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">STELLAR WIND(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">THE DEEP STRIKER(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">The Dirty of Loudness(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Time to Air(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">TITANS RETURN(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Unicorn tail(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Violet Rose(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">waxing and wanding(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Welcome(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">ユミル(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">創世ノート(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">朝焼けから始まるボクらの小さな旅(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">追想快晴テーマパーク(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">忍恋花(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">夕焼け ～Fading Day～(A)</div></li>
+    </ul>
 
-        <h2>個人差A</h2>
-        <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">CHECKING YOU OUT(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Fascination MAXX(H)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">m1dy Festival(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">PARANOiA ～HADES～(H)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Scharfrichter(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">ラクエン(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-clear">灼熱Pt.2 Long Train Running(H)</div></li>
-        </ul>
+    <h2>個人差A</h2>
+    <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">CHECKING YOU OUT(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Fascination MAXX(H)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">m1dy Festival(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">PARANOiA ～HADES～(H)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Scharfrichter(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">ラクエン(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-clear">灼熱Pt.2 Long Train Running(H)</div></li>
+    </ul>
 
-        <h2>地力B</h2>
-        <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">ALL MY TURN -このターンに、オレの全てを賭ける-(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Amazing Mirage(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">ANTHEM LANDING(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">AsiaN distractive(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Atropos(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">BabeL ～Grand Story～(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">BREAK OVER(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Cleopatrysm(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Debtty Daddy(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Digitank System(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Energy Drive(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">FAKE TIME(H)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">GET READY!!(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">m1dy Dynamic(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">naughty girl@Queen's Palace(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">NEMESIS(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Night sky(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Programmed Sun(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">rainbow guitar weeps(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">rainbow rainbow(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">ROTTERDAM SHOGUN(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Scarlet Moon(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Scripted Connection⇒ H mix(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">SHADE(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Snow Goose(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">STARLiGHT(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">THE DETONATOR(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Yellow Sketch(RX-Ver.S.P.L.)(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">ZEPHYRANTHES(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">バンブーソード・ガール</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">禍根(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">鬼天(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">龍と少女とデコヒーレンス(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile">朧†(A)</div></li>
-        </ul>
+    <h2>地力B</h2>
+    <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">ALL MY TURN -このターンに、オレの全てを賭ける-(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Amazing Mirage(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">ANTHEM LANDING(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">AsiaN distractive(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Atropos(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">BabeL ～Grand Story～(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">BREAK OVER(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Cleopatrysm(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Debtty Daddy(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Digitank System(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Energy Drive(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">FAKE TIME(H)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">GET READY!!(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">m1dy Dynamic(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">naughty girl@Queen's Palace(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">NEMESIS(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Night sky(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Programmed Sun(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">rainbow guitar weeps(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">rainbow rainbow(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">ROTTERDAM SHOGUN(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Scarlet Moon(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Scripted Connection⇒ H mix(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">SHADE(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Snow Goose(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">STARLiGHT(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">THE DETONATOR(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Yellow Sketch(RX-Ver.S.P.L.)(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">ZEPHYRANTHES(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">バンブーソード・ガール</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">禍根(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">鬼天(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">龍と少女とデコヒーレンス(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile">朧†(A)</div></li>
+    </ul>
 
-        <h2>地力C</h2>
-        <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">(This Is Not) The Angels(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">100% minimoo-G(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">2 tribe 4 K(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">AIR RAID FROM THA UNDAGROUND(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Arabian Rave Night(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">ATHER(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Blue Rain(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">CHRONO DIVER -NORNIR-(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile">Clione†(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">CONCEPTUAL(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">CONTRACT(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Devilz Sacrifice -贖罪の羊-(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile">Discloze(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Elektrick U-Phoria(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Engraved Mark(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Evans(H)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">HYENA(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">INAZUMA(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">KAMAITACHI(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Lighting Shower(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">MENDES(H)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">MINT(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Never Fade Away(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Programmed World(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">prompt(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Sakura Mirage(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">SOUND OF GIALLARHORN(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Squeeze(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">STARLIGHT DANCEHALL(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Sun Field(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">switch(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Take My Life(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Tropical April(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">TYPE MARS(G-Style Mix)(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Ubertreffen(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">VANESSA(H)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Wonder Girl feat. Kanae Asada(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Xepher(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile">か・し・ま・し☆PUMP UP！(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">ピアノ協奏曲第一番"蠍火"(H)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">華蝶風雪(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">時空トラベローグ(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">太陽SUNSUNボンジュールアバンチュール(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">超青少年ノ為ノ超多幸ナ超古典的超舞曲(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">天空脳番長危機十六連打(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">明鏡止水(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">鴉(A)</div></li>
-        </ul>
+    <h2>地力C</h2>
+    <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">(This Is Not) The Angels(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">100% minimoo-G(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">2 tribe 4 K(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">AIR RAID FROM THA UNDAGROUND(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Arabian Rave Night(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">ATHER(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Blue Rain(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">CHRONO DIVER -NORNIR-(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile">Clione†(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">CONCEPTUAL(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">CONTRACT(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Devilz Sacrifice -贖罪の羊-(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile">Discloze(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Elektrick U-Phoria(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Engraved Mark(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Evans(H)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">HYENA(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">INAZUMA(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">KAMAITACHI(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Lighting Shower(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">MENDES(H)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">MINT(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Never Fade Away(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Programmed World(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">prompt(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Sakura Mirage(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">SOUND OF GIALLARHORN(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Squeeze(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">STARLIGHT DANCEHALL(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Sun Field(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">switch(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Take My Life(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Tropical April(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">TYPE MARS(G-Style Mix)(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Ubertreffen(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">VANESSA(H)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Wonder Girl feat. Kanae Asada(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Xepher(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile">か・し・ま・し☆PUMP UP！(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">ピアノ協奏曲第一番"蠍火"(H)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">華蝶風雪(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">時空トラベローグ(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">太陽SUNSUNボンジュールアバンチュール(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">超青少年ノ為ノ超多幸ナ超古典的超舞曲(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">天空脳番長危機十六連打(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">明鏡止水(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">鴉(A)</div></li>
+    </ul>
 
-        <h2>地力D</h2>
-        <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">＃The_Relentless(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">405nm (Ryu☆mix)(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">ANDROMEDA(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Anisakis -somatic mutation type "Forza"-(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Around The Galaxy(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Aublia(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Aurora(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Be quiet(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Beyond the Seven(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Blame(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Blaze it UP!(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Broadbanded(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">CaptivAte～浄化～(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Click Again(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Daily Lunch Special(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Derelict Star feat. Ryu*(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Elisha(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">EXTREME MACH COLLIDER(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">GOLD RUSH(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Harmony and Lovely(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">HYPERION(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">INORI(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Insane Techniques(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">IX(H)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Line 4 Ruin(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Little Little Princess(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">PAPAYAPA BASS(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">PARADISE LOST(H)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Pharaoh(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">QUANTUM TELEPORTATION(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">quasar(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Quick Silver(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">R5(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">rainbow flyer(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Realize Maze(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">RED ZONE(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">RESONATE 1794(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">reunion(H)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Ride To The Core(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">RISLIM-Remix-(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Rock It(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">satellite020712 from "CODED ARMS"(A)(DJT)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">SEITEN NO TERIYAKI(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Smug Face -どうだ、オレの生き様は- (ONLY ONE EDITION)(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">SPACE FIGHT(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Synergy For Angels(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">THE LAST STRIKER(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">the shadow(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Uh-Oh(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Valgus(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Vulkan(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Wonder Bullfighter(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">xenon(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">ZED(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">ぷろぐれっしぶ時空少女！うらしまたろ子ちゃん！(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">ミッドナイト堕天使(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">君のハートにロックオン(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">合体せよ！ストロングイェーガー!!(Ryu☆ remix)(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">打打打打打打打打打打(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">嘆きの樹(H)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">炸裂！イェーガー電光チョップ!!(A)</div></li>
-        </ul>
+    <h2>地力D</h2>
+    <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">＃The_Relentless(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">405nm (Ryu☆mix)(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">ANDROMEDA(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Anisakis -somatic mutation type "Forza"-(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Around The Galaxy(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Aublia(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Aurora(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Be quiet(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Beyond the Seven(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Blame(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Blaze it UP!(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Broadbanded(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">CaptivAte～浄化～(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Click Again(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Daily Lunch Special(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Derelict Star feat. Ryu*(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Elisha(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">EXTREME MACH COLLIDER(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">GOLD RUSH(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Harmony and Lovely(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">HYPERION(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">INORI(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Insane Techniques(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">IX(H)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Line 4 Ruin(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Little Little Princess(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">PAPAYAPA BASS(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">PARADISE LOST(H)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Pharaoh(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">QUANTUM TELEPORTATION(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">quasar(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Quick Silver(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">R5(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">rainbow flyer(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Realize Maze(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">RED ZONE(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">RESONATE 1794(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">reunion(H)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Ride To The Core(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">RISLIM-Remix-(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Rock It(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">satellite020712 from "CODED ARMS"(A)(DJT)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">SEITEN NO TERIYAKI(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Smug Face -どうだ、オレの生き様は- (ONLY ONE EDITION)(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">SPACE FIGHT(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Synergy For Angels(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">THE LAST STRIKER(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">the shadow(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-easy">Uh-Oh(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Valgus(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Vulkan(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Wonder Bullfighter(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">xenon(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">ZED(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">ぷろぐれっしぶ時空少女！うらしまたろ子ちゃん！(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">ミッドナイト堕天使(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">君のハートにロックオン(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">合体せよ！ストロングイェーガー!!(Ryu☆ remix)(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">打打打打打打打打打打(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">嘆きの樹(H)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">炸裂！イェーガー電光チョップ!!(A)</div></li>
+    </ul>
 
-        <h2>地力E</h2>
-        <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">AFRO KNUCKLE(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Amnolys(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Be A Star(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Believe In Me(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">BROKEN EDEN(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Chronos(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">COLOSSEUM(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Cosmic Cat(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">DAWN -THE NEXT ENDEAVOUR-(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Empire State Glory(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Halfway of promise(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">KEY(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">KHAMEN BREAK(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">LASER CRUSTER(H)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Linus(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Lucy(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">MIRACLE MEETS(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">murmur twins(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">NEW SENSATION -もう、あなたしか見えない-(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">No Tears(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">PENDUAL TALISMAN(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Raison d'etre～交差する宿命～(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Rave Saves You feat. Cardz (Exclusive IIDX Mix)(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">refractive index(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Sakura Reflection(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Second Heaven(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Secret of Love(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">SHELTER OF THE MIND(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">spiral galaxy(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">SWEETEST SAVAGE(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">セロトニン(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">パ→ピ→プ→Yeah!(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">仮想空間の旅人たち(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile">恋は白帯、サンシロー†(A)</div></li>
-        </ul>
+    <h2>地力E</h2>
+    <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">AFRO KNUCKLE(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Amnolys(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Be A Star(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Believe In Me(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">BROKEN EDEN(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Chronos(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">COLOSSEUM(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Cosmic Cat(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">DAWN -THE NEXT ENDEAVOUR-(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Empire State Glory(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Halfway of promise(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">KEY(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">KHAMEN BREAK(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">LASER CRUSTER(H)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Linus(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Lucy(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">MIRACLE MEETS(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">murmur twins(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">NEW SENSATION -もう、あなたしか見えない-(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">No Tears(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">PENDUAL TALISMAN(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Raison d'etre～交差する宿命～(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Rave Saves You feat. Cardz (Exclusive IIDX Mix)(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">refractive index(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Sakura Reflection(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Second Heaven(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Secret of Love(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">SHELTER OF THE MIND(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">spiral galaxy(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">SWEETEST SAVAGE(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">セロトニン(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">パ→ピ→プ→Yeah!(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">仮想空間の旅人たち(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile">恋は白帯、サンシロー†(A)</div></li>
+    </ul>
 
-        <h2>地力F</h2>
-        <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Blind Justice～Torn souls,Hurt Faiths～(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">D.C.fish(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Destiny Sword(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Erosion Mark(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Love Is Eternity(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Rock Da House(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Take It Easy(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">全力 SPECIAL VACATION!! ～限りある休日～(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">牧神笛吹きて(A)</div></li>
-            <li><div class="uk-panel uk-panel-box sheet-tile">麗 ～うらら～(A)</div></li>
-        </ul>
+    <h2>地力F</h2>
+    <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Blind Justice～Torn souls,Hurt Faiths～(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">D.C.fish(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Destiny Sword(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Erosion Mark(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Love Is Eternity(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Rock Da House(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">Take It Easy(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">全力 SPECIAL VACATION!! ～限りある休日～(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile lamp-hard">牧神笛吹きて(A)</div></li>
+        <li><div class="uk-panel uk-panel-box sheet-tile">麗 ～うらら～(A)</div></li>
+    </ul>
 
-        <h2>難易度未定</h2>
-        <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
-            <li><div class="uk-panel uk-panel-box sheet-tile">yamabiko (SINOBUZ Edition)(A)</div></li>
-        </ul>
-    </div><!-- #wrap -->
-</body>
-</html>
+    <h2>難易度未定</h2>
+    <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
+        <li><div class="uk-panel uk-panel-box sheet-tile">yamabiko (SINOBUZ Edition)(A)</div></li>
+    </ul>
+</div><!-- #wrap -->
