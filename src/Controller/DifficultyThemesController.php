@@ -123,11 +123,22 @@ class DifficultyThemesController extends AppController
 
         $usersTable = TableRegistry::get('Users');
         $user = $usersTable->get($user_id);
+        $lampsTable = TableRegistry::get('Lamps');
+        $lamps = $lampsTable->find('list');
 
         // 難易度ごとにグループ分けする
         $difficulties_sheets = array();
         $tmp_theme_sheet = array();
         foreach ($difficultyTheme->difficulty_themes_sheets as $theme_sheet) {
+
+            if(empty($theme_sheet->sheet->scores)){
+                $newScore = TableRegistry::get('Scores')->newEntity();
+                $newScore->user_id = $user_id;
+                $newScore->sheet_id = $theme_sheet->sheet->id;
+                $newScore->lamp_id = 0;
+                array_push($theme_sheet->sheet->scores, $newScore);
+            }
+
             if(empty($tmp_theme_sheet)
                 || ($tmp_theme_sheet->difficulty_type != $theme_sheet->difficulty_type)
                 || ($tmp_theme_sheet->difficulty_rank != $theme_sheet->difficulty_rank)
@@ -145,8 +156,7 @@ class DifficultyThemesController extends AppController
         }
         $difficultyTheme->difficulty_themes_sheets = $difficulties_sheets;
 
-        $this->set('difficultyTheme', $difficultyTheme);
-        $this->set('user', $user);
+        $this->set(compact('difficultyTheme', 'user', 'lamps'));
         $this->set('_serialize', ['difficultyTheme']);
     }
 }
