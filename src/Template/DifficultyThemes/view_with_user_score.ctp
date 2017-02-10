@@ -6,8 +6,17 @@
     <h2><?= h($difficulty) ?></h2>
     <ul class="uk-grid .uk-grid-collapse uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin>
         <?php foreach ($sheets as $sheet) : ?>
-            <li><div class="uk-panel uk-panel-box sheet-tile">
+            <li><div class="uk-panel uk-panel-box sheet-tile lamp-<?= isset($sheet->scores[0]->lamp) ? h(mb_strtolower($sheet->scores[0]->lamp->lamp_code)) : 'n' ?>">
                 <?= h($sheet->tune->title) ?> [<?= h($sheet->sheet_type->sheet_type_code) ?>]
+                <?php if(isset($sheet->scores[0]->id)): ?>
+                    <?php echo $this->Form->create($sheet->scores[0], ['url' => ['controller' => 'Scores', 'action' => 'edit']]); ?>
+                <?php else: ?>
+                    <?php echo $this->Form->create($sheet->scores[0], ['url' => ['controller' => 'Scores', 'action' => 'add']]); ?>
+                    <?php echo $this->Form->hidden('user_id'); ?>
+                    <?php echo $this->Form->hidden('sheet_id'); ?>
+                <?php endif; ?>
+                <?php echo $this->Form->input('lamp_id', ['options' => $lamps, 'onchange' => 'this.form.submit()']); ?>
+                <?= $this->Form->end() ?>
             </div></li>
         <?php endforeach; ?>
     </ul>
