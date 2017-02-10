@@ -82,6 +82,13 @@ class ScoresController extends AppController
         $score = $this->Scores->newEntity();
         if ($this->request->is('post')) {
             $score = $this->Scores->patchEntity($score, $this->request->data);
+
+            if($this->Auth->user('role') != 'admin'){
+                if ($score->user_id != $this->Auth->user('id')){
+                    $this->Flash->error(__('The score could not be saved. Please, try again.'));
+                    return $this->redirect($this->referer());
+                }
+            }
             if ($this->Scores->save($score)) {
                 $this->Flash->success(__('The score has been saved.'));
 
