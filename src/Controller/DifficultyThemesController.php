@@ -124,7 +124,7 @@ class DifficultyThemesController extends AppController
         $usersTable = TableRegistry::get('Users');
         $user = $usersTable->get($user_id);
         $lampsTable = TableRegistry::get('Lamps');
-        $lamps = $lampsTable->find('list');
+        $lamps = $lampsTable->find('list', ['order' => ['lamp_score' => 'ASC']]);
 
         // 難易度ごとにグループ分けする
         $difficulties_sheets = array();
