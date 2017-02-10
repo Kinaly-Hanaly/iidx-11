@@ -1,0 +1,35 @@
+#wrap {
+    max-width: 960px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.sheet-tile {
+    border: 1px solid #E5E5E5;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    font-size: 12px;
+    text-align: center;
+}
+.sheet-tile.lamp-failed {
+    background-color: #BDBDBD;
+}
+.sheet-tile.lamp-assist {
+    background-color: #D1C4E9;
+}
+.sheet-tile.lamp-easy {
+    background-color: #DCEDC8;
+}
+.sheet-tile.lamp-clear {
+    background-color: #B3E5FC;
+}
+.sheet-tile.lamp-hard {
+    background-color: #ffcdd2;
+}
+.sheet-tile.lamp-exhard {
+    background-color: #FFE082;
+}
+.sheet-tile.lamp-fc {
+    background-color: #FF8A65;
+}
