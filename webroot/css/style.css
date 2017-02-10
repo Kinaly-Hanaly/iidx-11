@@ -12,22 +12,22 @@
     font-size: 12px;
     text-align: center;
 }
-.sheet-tile.lamp-failed {
+.sheet-tile.lamp-f {
     background-color: #BDBDBD;
 }
-.sheet-tile.lamp-assist {
+.sheet-tile.lamp-a {
     background-color: #D1C4E9;
 }
-.sheet-tile.lamp-easy {
+.sheet-tile.lamp-e {
     background-color: #DCEDC8;
 }
-.sheet-tile.lamp-clear {
+.sheet-tile.lamp-c {
     background-color: #B3E5FC;
 }
-.sheet-tile.lamp-hard {
+.sheet-tile.lamp-h {
     background-color: #ffcdd2;
 }
-.sheet-tile.lamp-exhard {
+.sheet-tile.lamp-eh {
     background-color: #FFE082;
 }
 .sheet-tile.lamp-fc {
