@@ -35,7 +35,7 @@ class LampsTable extends Table
         parent::initialize($config);
 
         $this->table('lamps');
-        $this->displayField('lamp_name');
+        $this->displayField('lamp_code');
         $this->primaryKey('id');
 
         $this->addBehavior('Timestamp');
