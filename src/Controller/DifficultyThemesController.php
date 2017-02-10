@@ -12,6 +12,13 @@ use Cake\ORM\TableRegistry;
 class DifficultyThemesController extends AppController
 {
 
+    public function initialize()
+    {
+        parent::initialize();
+        // A Guest can execute index/view.
+        $this->Auth->allow(['viewWithUserScore']);
+    }
+
     /**
      * Index method
      *
