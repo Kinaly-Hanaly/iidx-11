@@ -113,14 +113,33 @@ class DifficultyThemesController extends AppController
     {
 
         $user_id = $this->request->params['pass'][0];
-        debug($user_id);
         $theme_id = $this->request->params['pass'][1];
-        debug($theme_id);
 
         $difficultyTheme = $this->DifficultyThemes->find('WithUserScore', [
             'user_id' => $user_id,
             'difficultyTheme_id' => $theme_id
         ]);
+
+        // 難易度ごとにグループ分けする
+        $difficulties_sheets = array();
+        $tmp_theme_sheet = array();
+        foreach ($difficultyTheme->difficulty_themes_sheets as $theme_sheet) {
+            if(empty($tmp_theme_sheet)
+                || ($tmp_theme_sheet->difficulty_type != $theme_sheet->difficulty_type)
+                || ($tmp_theme_sheet->difficulty_rank != $theme_sheet->difficulty_rank)
+            ) {
+                if($theme_sheet->difficulty_type != null){
+                    $difficulty = $theme_sheet->difficulty_type->type_name . $theme_sheet->difficulty_rank->rank_name;
+                } else {
+                    $difficulty = '難易度未定';
+                }
+                $difficulties_sheets[$difficulty] = array($theme_sheet->sheet);
+            } else {
+                array_push($difficulties_sheets[$difficulty], $theme_sheet->sheet);
+            }
+            $tmp_theme_sheet = $theme_sheet;
+        }
+        $difficultyTheme->difficulty_themes_sheets = $difficulties_sheets;
 
         $this->set('difficultyTheme', $difficultyTheme);
         $this->set('_serialize', ['difficultyTheme']);
