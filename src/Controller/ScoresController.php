@@ -85,7 +85,7 @@ class ScoresController extends AppController
             if ($this->Scores->save($score)) {
                 $this->Flash->success(__('The score has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect($this->referer());
             }
             $this->Flash->error(__('The score could not be saved. Please, try again.'));
         }
@@ -114,7 +114,7 @@ class ScoresController extends AppController
             if ($this->Scores->save($score)) {
                 $this->Flash->success(__('The score has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect($this->referer());
             }
             $this->Flash->error(__('The score could not be saved. Please, try again.'));
         }
